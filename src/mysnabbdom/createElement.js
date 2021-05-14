@@ -6,6 +6,7 @@ export default function createElement(vnode) {
     let domNode = document.createElement(vnode.sel)
     // 有自节点还是有文本
     if (vnode.text !== '' && (vnode.children == undefined || vnode.children.length == 0)) {
+        console.log('文本节点dom');
         // 内部是文字
         domNode.innerText = vnode.text;
     } else if (Array.isArray(vnode.children) && vnode.children.length > 0) { // 当children有内容的时候
