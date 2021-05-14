@@ -10,11 +10,12 @@ export default function (oldVnode, newVnode) {
     if(oldVnode.sel === newVnode.sel && oldVnode.key === newVnode.key){
         console.log('同一节点');
     } else{
-        console.log('不是同一节点');
+        console.log('不是同一节点 暴力插入新的 删除旧的');
         // 返回真实dom elm
         const newVnodeElm = createElement(newVnode)
-        // 渲染dom
+        // 上树渲染dom 插入到oldVnode之前
         oldVnode.elm.parentNode.insertBefore(newVnodeElm, oldVnode.elm)
+        // 删除老节点
+        oldVnode.elm.parentNode.removeChild(oldVnode.elm)
     }
-    
 }

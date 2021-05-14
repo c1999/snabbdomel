@@ -8,6 +8,11 @@ import patch from "./mysnabbdom/patch.js"
 //         h('a', {}, '测试3')
 //     ]),
 // ]);
-const vnode = h('h1', {}, '你好')
+const vnode = h('ul', {}, [
+    h('li', {}, 'A'),
+    h('li', {}, 'B'),
+    h('li', {}, 'C'),
+    h('li', {}, 'D'),
+]);
 const container = document.getElementById('container')
-patch(container, vnode)
+patch(container, vnode);
