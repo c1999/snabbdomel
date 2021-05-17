@@ -8,15 +8,21 @@ import patch from "./mysnabbdom/patch.js"
 //         h('a', {}, '测试3')
 //     ]),
 // ]);
-const vnode = h('ul', {}, '你好');
+const vnode = h('ul', {}, [
+    h('li', { key: 'A' }, 'A'),
+    h('li', { key: 'B' }, 'B'),
+    h('li', { key: 'C' }, 'C'),
+]);
 const container = document.getElementById('container')
 patch(container, vnode);
 
 
 const vnode2 = h('ul', {},[
-    h('li', {}, 'A'),
-    h('li', {}, 'B'),
-    h('li', {}, 'C')
+    h('li', { key: 'A' }, 'A'),
+    h('li', { key: 'B' }, 'B'),
+    h('li', { key: 'D' }, 'D'),
+    h('li', { key: 'E' }, 'E'),
+    h('li', { key: 'C' }, 'C')
 ]);
 const btn = document.getElementById('btn')
 btn.onclick = function () {

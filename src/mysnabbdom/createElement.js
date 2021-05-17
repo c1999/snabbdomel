@@ -3,7 +3,7 @@
  */
 export default function createElement(vnode) {
     // 创建真实dom
-    let domNode = document.createElement(vnode.sel)
+    let domNode = document.createElement(vnode.sel);
     // 有自节点还是有文本
     if (vnode.text !== '' && (vnode.children == undefined || vnode.children.length == 0)) {
         console.log('文本节点dom');
@@ -13,7 +13,7 @@ export default function createElement(vnode) {
         for (const item of vnode.children) {
             // 递归创建子Dom并append
             let chDom = createElement(item);
-            domNode.appendChild(chDom)
+            domNode.appendChild(chDom);
         }
     }
     // 补充elm属性
